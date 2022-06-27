@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::25833" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "way\/23294976", "@id": "way\/23294976", "addr:city": "Dresden", "addr:country": "DE", "addr:housenumber": "23", "addr:postcode": "01159", "addr:street": "Malterstraße", "building": "yes", "heritage": null, "weight": 0, "global_line_ID": 14 }, "geometry": { "type": "LineString", "coordinates": [ [ 408233.40496197331, 5655554.3392491285 ], [ 408221.57396552991, 5655551.4905709149 ] ] } },
+{ "type": "Feature", "properties": { "id": "way\/23294976", "@id": "way\/23294976", "addr:city": "Dresden", "addr:country": "DE", "addr:housenumber": "23", "addr:postcode": "01159", "addr:street": "Malterstraße", "building": "yes", "heritage": null, "weight": 1, "global_line_ID": 15 }, "geometry": { "type": "LineString", "coordinates": [ [ 408221.57396552991, 5655551.4905709149 ], [ 408225.67019287171, 5655534.5881170994 ] ] } },
+{ "type": "Feature", "properties": { "id": "way\/23294976", "@id": "way\/23294976", "addr:city": "Dresden", "addr:country": "DE", "addr:housenumber": "23", "addr:postcode": "01159", "addr:street": "Malterstraße", "building": "yes", "heritage": null, "weight": 0, "global_line_ID": 16 }, "geometry": { "type": "LineString", "coordinates": [ [ 408225.67019287171, 5655534.5881170994 ], [ 408237.50122503348, 5655537.4368050443 ] ] } },
+{ "type": "Feature", "properties": { "id": "way\/23294976", "@id": "way\/23294976", "addr:city": "Dresden", "addr:country": "DE", "addr:housenumber": "23", "addr:postcode": "01159", "addr:street": "Malterstraße", "building": "yes", "heritage": null, "weight": 1, "global_line_ID": 17 }, "geometry": { "type": "LineString", "coordinates": [ [ 408237.50122503348, 5655537.4368050443 ], [ 408233.40496197331, 5655554.3392491285 ] ] } }
+]
+}
