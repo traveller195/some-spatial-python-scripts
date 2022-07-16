@@ -15,7 +15,7 @@ from sqlalchemy import create_engine
 
 
 
-db_connection_url = "postgresql+psycopg2://postgres:postgres@goat_db_01:5432/postgres"
+db_connection_url = "postgresql+psycopg2://postgres:postgres@db_name:5432/postgres"
 
 con = create_engine(db_connection_url)  
 
