@@ -18,9 +18,6 @@ import time
 from time import gmtime, strftime
 
 import numpy as np
-import matplotlib 
-import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
 
 import os
 import sys
@@ -42,6 +39,8 @@ city = 'city_name'
 # import data
 
 # encoding 'latin-1' instead of utf-8. it was not working first.
+# encoding depends on the input data
+
 daten_csv = gpd.read_file(r'path/to/adress_list.csv', encoding='latin-1')
 
 print(daten_csv.head())
@@ -63,6 +62,7 @@ for j, row in daten_csv.iterrows():
 
     print(location)
     if location == None:
+        # if geocoding was not successful:
         daten_csv.at[j, 'status'] = 'no_coordinates'
 
     if location != None:
@@ -71,17 +71,26 @@ for j, row in daten_csv.iterrows():
         daten_csv.at[j, 'lat'] = location.latitude
         daten_csv.at[j, 'lon'] = location.longitude    
 
-
+    # important: wait at least one second with time sleep !
     del str_adress, location
 
 print(daten_csv.head())
 
 # selection of only succesful geocoded adresses
 
+# create new GeoDataFrame with a proper geometry column based on the columns of lat and lon
+# containing only successful geocoded data rows
 
 geocoded = gpd.GeoDataFrame(daten_csv[daten_csv['status']== 'succesful'], geometry=gpd.points_from_xy(daten_csv[daten_csv['status']== 'succesful'].lon, daten_csv[daten_csv['status']== 'succesful'].lat))
 
 geocoded.to_file("/code/output/" + str(strftime("%Y_%m_%d-%H_%M_%S", gmtime())) + "_geocoded_data.geojson", driver='GeoJSON', encoding='utf-8')
+
+
+# check out also typical errors of the geocoding process
+# like: house number did not match. you can try to change 'streetname 7 A' into 'streetname 7a'
+
+
+
 
 
 #geolocator = Nominatim(user_agent="geoapiExercises")
